@@ -1,0 +1,126 @@
+/* CSS for ProMan index page
+    by StormCoders
+*/
+
+
+/* 
+==========================================================================
+Globals
+==========================================================================
+*/
+
+html {
+	box-sizing: border-box;
+	height: 100%;
+    background-color: #EEEEEE;
+}
+
+body {
+	box-sizing: border-box;
+	font-family: "Roboto", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+    background-color: #EEEEEE;
+}
+
+/* 
+==========================================================================
+Header
+==========================================================================
+*/
+
+#addBoard {
+	font-size: 1.4em;
+}
+
+#stormcoders {
+	margin-top: 1em;
+}
+
+.page-header {
+	margin: auto;
+}
+
+#page-title {
+	margin-top: 0em;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 3em;
+	color: #d95254;
+}
+
+
+/* 
+==========================================================================
+Boards
+==========================================================================
+*/
+
+.task-template {
+    display:none;
+}
+.task-template:nth-child(-n+3) {
+    display:block;
+}
+
+.card {
+	padding: 20px;
+	margin: 1em;
+}
+
+.card-title {
+	color: black;
+	margin-top: -20px;
+	margin-left: -20px;
+	margin-right: -20px;
+	margin-bottom: 20px;
+}
+
+
+#viewBoard {
+	font-size: 1.2em;
+}
+
+#deleteBoard {
+	background-color: #d95254;
+	border-color: #d95254;
+	margin-left: 2em;
+}
+
+
+
+/* 
+==========================================================================
+Board 'cards'
+==========================================================================
+*/
+
+.card {
+    background-color: #FAFAFA;
+    box-shadow: 0px 2px 8px #888888;
+    border-radius: 4px;
+}
+
+.card-title {
+    background-color: #61a2c8;
+    padding: 10px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+
+
+#alert {
+	font-size: 1.5em;
+	color: #F44336;
+}
+
+
+.modal-title {
+	font-size: 2em;
+	color: #61a2c8;
+}
