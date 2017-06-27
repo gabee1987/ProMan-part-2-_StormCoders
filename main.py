@@ -28,5 +28,13 @@ def saveboard():
     return redirect(url_for('index'))
 
 
+@app.route('/get_boards')
+def get_boards():
+    JSON_from_database = {}
+    all_boards = handle_database(get_boards)
+    
+    return all_boards
+
+
 if __name__ == '__main__':
     app.run(debug=True)

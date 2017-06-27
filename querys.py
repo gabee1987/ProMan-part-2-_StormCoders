@@ -6,4 +6,7 @@
 '''
 
 save_board = """INSERT INTO boards (title, state) \
-                    VALUES ('%s', '%s')"""
+                    VALUES ('%s', '%s');"""
+
+
+get_boards = """SELECT title, state FROM boards;"""
