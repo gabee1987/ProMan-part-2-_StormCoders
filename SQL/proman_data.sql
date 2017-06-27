@@ -1,24 +1,17 @@
 -- StormCoders ProMan v.2.0
 
-DROP TABLE IF EXISTS boards;
-CREATE TABLE boards (
+DROP TABLE IF EXISTS boards_proman;
+CREATE TABLE boards_proman (
     id SERIAL PRIMARY KEY,
     title text,
     state text
 );
 
 
-DROP TABLE IF EXISTS cards;
-CREATE TABLE cards (
+DROP TABLE IF EXISTS cards_proman;
+CREATE TABLE cards_proman (
     id SERIAL PRIMARY KEY,
+    board_id INT REFERENCES boards_proman (id),
     title text,
     status text
-);
-
-
-DROP TABLE IF EXISTS users;
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    username varchar (30) UNIQUE NOT NULL,
-    password varchar (30)
 );
