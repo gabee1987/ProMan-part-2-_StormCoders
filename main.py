@@ -5,6 +5,7 @@ from querys import *
 from database_handler import *
 
 
+
 app = Flask(__name__)
 
 
@@ -22,6 +23,21 @@ def saveboard():
     data_to_query = (board_data['boardObj']['title'], board_data['boardObj']['state'])
     handle_database(query, data_to_query)
     return redirect(url_for('index'))
+
+
+@app.route('/get-boards')
+def get_boards():
+    rows = handle_database(get_boards)
+
+    objects_list = []
+    for row in rows:
+        d = collections.OrderedDict()
+        d['id'] = row[0]
+        d['title'] = row[1]
+        d['state'] = row.[2]
+        objects_list.append(d)
+    datas_in_json = json.dumps(objects_list)
+    return datas_in_json
 
 
 if __name__ == '__main__':
