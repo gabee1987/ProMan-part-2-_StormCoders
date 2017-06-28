@@ -9,7 +9,7 @@ function saveBoard(boardTitle, boardState) {
     console.log(JSONBoard);
     $.ajax({
             type : 'POST',
-            url : '/saveboard',
+            url : '/save-board',
             contentType: 'application/json;charset=UTF-8',
             data : JSON.stringify({JSONBoard}),
             success : function(response) {

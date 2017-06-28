@@ -1,8 +1,9 @@
 
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 import json
-import querys
-import collections
+from querys import *
+from database_handler import *
+
 
 
 app = Flask(__name__)
@@ -14,18 +15,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/saveboard', methods=['POST'])
+@app.route('/save-board', methods=['POST'])
 def saveboard():
     json_board_data = request.json['JSONBoard']
     board_data = json.loads(json_board_data)
-    query = querys.save_board
+    query = save_board
     data_to_query = (board_data['boardObj']['title'], board_data['boardObj']['state'])
-    # result = handle_database(query, values)
-    print(json_board_data)
-    print(board_data)
-    print(board_data['boardObj']['title'])
-    print(board_data['boardObj']['state'])
-    print(data_to_query)
+    handle_database(query, data_to_query)
     return redirect(url_for('index'))
 
 

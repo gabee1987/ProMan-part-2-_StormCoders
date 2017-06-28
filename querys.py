@@ -5,8 +5,11 @@
     by StormCoders
 '''
 
-save_board = """INSERT INTO boards (title, state) \
-                    VALUES ('%s', '%s');"""
+
 
 
 get_boards = """SELECT id, title, state FROM boards;"""
+
+save_board = """INSERT INTO boards_proman (title, state) \
+                    VALUES (%s, %s)"""
+
