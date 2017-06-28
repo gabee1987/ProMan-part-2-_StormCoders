@@ -10,9 +10,7 @@ function main() {
         };
         saveBoard(boardTitle, boardState);
     });
-    $('.view-board').on('click', function(){
-        getCards();
-    });
+    
 }
 
 $(document).ready(main());

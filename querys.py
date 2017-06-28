@@ -5,5 +5,5 @@
     by StormCoders
 '''
 
-save_board = """INSERT INTO boards (title, state) \
-                    VALUES ('%s', '%s')"""
+save_board = """INSERT INTO boards_proman (title, state) \
+                    VALUES (%s, %s)"""
