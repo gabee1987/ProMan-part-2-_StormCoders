@@ -1,3 +1,4 @@
+'''
 import psycopg2
 from local_config import *
 
@@ -38,3 +39,4 @@ def handle_database(query, query_variables=None):
 
         # result is a list that contains tuples (one tuple equals one row)
         return result
+        '''
