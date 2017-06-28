@@ -6,9 +6,7 @@
 '''
 
 
-
-
-get_boards = """SELECT id, title, state FROM boards;"""
+get_boards_query = """SELECT id, title, state FROM boards_proman;"""
 
 save_board = """INSERT INTO boards_proman (title, state) \
                     VALUES (%s, %s)"""

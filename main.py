@@ -1,9 +1,9 @@
 
-from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
+from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify, Response
 import json
 from querys import *
 from database_handler import *
-
+import collections
 
 
 app = Flask(__name__)
@@ -27,16 +27,17 @@ def saveboard():
 
 @app.route('/get-boards')
 def get_boards():
-    rows = handle_database(get_boards)
+    rows = handle_database(get_boards_query)
 
     objects_list = []
     for row in rows:
         d = collections.OrderedDict()
         d['id'] = row[0]
         d['title'] = row[1]
-        d['state'] = row.[2]
+        d['state'] = row[2]
         objects_list.append(d)
     datas_in_json = json.dumps(objects_list)
+    print(datas_in_json)
     return datas_in_json
 
 

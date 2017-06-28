@@ -1,4 +1,21 @@
 function main() {
+
+    function getBoards() {
+    $.ajax({
+            type : 'GET',
+            url : '/get-boards',
+            contentType: 'application/json;charset=UTF-8',
+            success : function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                alert('Failed get boards!');
+            },
+            dataType: 'json'
+        });
+    }
+    getBoards();
+    
     $('#addBoardButton').on('click', function(){
         var boardTitle = $('#addBoardTitle').val();
         var boardState = 'active';
