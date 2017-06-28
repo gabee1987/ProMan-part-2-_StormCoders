@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify
 import json
 import querys
+import collections
 
 
 app = Flask(__name__)
@@ -28,12 +29,19 @@ def saveboard():
     return redirect(url_for('index'))
 
 
-@app.route('/get_boards')
+@app.route('/get-boards')
 def get_boards():
-    JSON_from_database = {}
-    all_boards = handle_database(get_boards)
-    
-    return all_boards
+    rows = handle_database(get_boards)
+
+    objects_list = []
+    for row in rows:
+        d = collections.OrderedDict()
+        d['id'] = row[0]
+        d['title'] = row[1]
+        d['state'] = row.[2]
+        objects_list.append(d)
+    datas_in_json = json.dumps(objects_list)
+    return datas_in_json
 
 
 if __name__ == '__main__':
