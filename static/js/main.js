@@ -16,7 +16,7 @@ function main() {
     }
     getBoards();
     
-    $('#addBoardButton').on('click', function(){
+    $('#addBoardButton').on('click', function() {
         var boardTitle = $('#addBoardTitle').val();
         var boardState = 'active';
         //if input is empty alert the user
@@ -28,7 +28,7 @@ function main() {
         saveBoard(boardTitle, boardState);
     });
     
-    $('#addCardButton').on('click', function(){
+    $('#addCardButton').on('click', function() {
         var boardId = 1 //$('#boardId').data('boardId');
         var cardTitle = $('#addCardTitle').val();
         var cardStatus = 'new';
