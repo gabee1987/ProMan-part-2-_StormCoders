@@ -28,6 +28,12 @@ function main() {
         saveBoard(boardTitle, boardState);
     });
     
+    $('#addCardButton').on('click', function(){
+        var boardId = 1 //$('#boardId').data('boardId');
+        var cardTitle = $('#addCardTitle').val();
+        var cardStatus = 'new';
+        saveCard(boardId, cardTitle, cardStatus);
+    });
 }
 
 $(document).ready(main());
