@@ -75,7 +75,7 @@
             </nav>
         
         <div class="container-fluid">
-                <div class="card-deck"> 
+                <div id="board-deck" class="card-deck"> 
 
                 <!--bootCards will be displayed here-->
 
@@ -112,7 +112,19 @@
         <div id="detailedBoard" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                ...
+                
+                <div class="modal-header">
+                        <h5 class="modal-title" id="addBoardFormLabel" data-boardid="">Add a card</h5>
+                        <button id="add-card-button" type="button" class="btn btn-outline-success my-2 my-sm-0">
+                            Add a card
+                        </button>
+                    </div>
+                    <div id="detailed-board-deck" class="card-deck"> 
+
+                        <!--Cards will be displayed here-->
+
+                    </div>
+
                 </div>
             </div>
         </div>

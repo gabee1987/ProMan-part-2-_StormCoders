@@ -37,6 +37,13 @@ function main() {
         var cardStatus = 'new';
         saveCard(boardId, cardTitle, cardStatus);
     });
+
+    $('#add-card-button').on('click', function() {
+        var boardId = 1 //$('#boardId').data('boardId');
+        var cardTitle = 'Card';
+        var cardStatus = 'new';
+        createBoard(cardTitle, cardStatus)
+    });
     
 }
 

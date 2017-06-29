@@ -9,7 +9,7 @@ $(document).ready(function () {
 }); */
 
 function createBoard(boardTitle, boardState) {
-    var deck = $('.card-deck');
+    var deck = $('#board-deck');
     var board = $(
                 `<div class="card mb-4">
                     <div class="card-block">
