@@ -13,6 +13,7 @@ function saveBoard(boardTitle, boardState) {
             success : function(response) {
                 alert('Successfully added the board!');
                 console.log(response);
+                addBootCard(boardTitle, boardState)
             },
             error: function(error) {
                 alert('Failed to add board!');

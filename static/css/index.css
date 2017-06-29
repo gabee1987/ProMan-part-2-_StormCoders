@@ -136,7 +136,7 @@ Board 'cards'
 .card {
 	display: inline-block;
 	min-width: 230px;
-	max-width: 230px;
+	max-width: 350px;
 	width: 230px;
     background-color: #FAFAFA;
     box-shadow: 0px 2px 8px #888888;
@@ -178,7 +178,7 @@ Board 'cards'
 }
 
 
-#alert {
+#alert-main {
 	font-size: 1.5em;
 	color: #F44336;
 }

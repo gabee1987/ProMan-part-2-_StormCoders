@@ -1,3 +1,4 @@
+/* Service add board button
 $(document).ready(function () {
     $('#addBootCard').on('click', function(){
         var boardTitle = 'Board';
@@ -5,7 +6,7 @@ $(document).ready(function () {
         addBootCard(boardTitle, boardState);
     });
 
-});
+}); */
 
 function addBootCard(boardTitle, boardState) {
     debugger;
