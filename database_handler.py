@@ -38,3 +38,12 @@ def handle_database(query, query_variables=None):
 
         # result is a list that contains tuples (one tuple equals one row)
         return result
+
+get_cards_query = """SELECT cards_proman.title, boards_proman.title
+                FROM cards_proman
+                INNER JOIN boards_proman
+                ON cards_proman.id = boards_proman.id
+                WHERE boards_proman.id = %s"""
+
+
+print(handle_database(get_cards_query))
