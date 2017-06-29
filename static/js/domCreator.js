@@ -8,8 +8,7 @@ $(document).ready(function () {
 
 }); */
 
-function addBootCard(boardTitle, boardState) {
-    debugger;
+function createBoard(boardTitle, boardState) {
     var deck = $('.card-deck');
     var board = $(
                 `<div class="card mb-4">

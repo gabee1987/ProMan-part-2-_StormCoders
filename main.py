@@ -50,7 +50,6 @@ def get_boards():
         d['state'] = row[2]
         objects_list.append(d)
     datas_in_json = json.dumps(objects_list)
-    print(datas_in_json)
     return datas_in_json
 
 

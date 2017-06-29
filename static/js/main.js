@@ -7,6 +7,9 @@ function main() {
             contentType: 'application/json;charset=UTF-8',
             success : function(response) {
                 console.log(response);
+                for (let b = 0; b < response.length; b++) {
+                    createBoard(response[b]['title'], response[b]['state'])
+                }
             },
             error: function(error) {
                 alert('Failed get boards!');

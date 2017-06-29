@@ -86,6 +86,13 @@ Navbar
 .navbar img {
 }
 
+#BoardForm {
+	border: none;
+}
+
+#BoardForm:hover {
+	cursor: pointer;
+}
 
 /* 
 ==========================================================================
@@ -143,6 +150,12 @@ Board 'cards'
     border-radius: 4px;
 	border: #ebebeb;
 	border-width: 0.5px;
+}
+
+.card a {
+	color: black;
+	background-color: #00b8d0;
+	border-color: #00b8d0;
 }
 
 .card-deck {
