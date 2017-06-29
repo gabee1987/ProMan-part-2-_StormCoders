@@ -30,13 +30,16 @@ def save_board():
 @app.route('/save-card', methods=['POST'])
 def save_card():
     json_card_data = request.json['JsonCard']
+    print(json_card_data)
     card_object = json.loads(json_card_data)
+    print(card_object)
     query = save_card_query
     data_to_query = (
                     card_object['cardObject']['boardId'],
                     card_object['cardObject']['title'],
                     card_object['cardObject']['status']
                     )
+    print(data_to_query)
     handle_database(query, data_to_query)
     return redirect(url_for('index'))
 
@@ -61,13 +64,10 @@ def get_boards():
 def get_cards():
 
     json_board_data = request.json['data']
-    print(json_board_data)
     board_data = json.loads(json_board_data)
     data_to_query = str(board_data['idObj']['id'])
-    print(data_to_query, 'data_to_query')
 
     rows = handle_database(get_cards_query, [data_to_query])
-    print(rows, 'rows')
 
     objects_list = []
     for row in rows:
@@ -77,7 +77,6 @@ def get_cards():
         objects_list.append(d)
 
     datas_in_json = json.dumps(objects_list)
-    print(datas_in_json, 'datas_in_json')
     return datas_in_json
 
 

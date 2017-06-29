@@ -23,12 +23,12 @@ function main() {
     
     $('#add-card-button').on('click', function() {
         var boardId = $('.hidden-id').text();
-        var cardTitle = $('#add-card-title').val();
+        var cardTitle = $('#addCardTitle').val();
         var cardStatus = 'new';
         //if input is empty alert the user
-        if($('#add-card-title').val() == '') {
-            $('#alert-main').html('<strong>Warning!</strong> You left the title empty');
-            $('#alert-main').fadeIn().delay(1000).fadeOut();
+        if($('#addCardTitle').val() == '') {
+            $('#alert-main-card').html('<strong>Warning!</strong> You left the title empty');
+            $('#alert-main-card').fadeIn().delay(1000).fadeOut();
             return false;
         };
         saveCard(boardId, cardTitle, cardStatus);

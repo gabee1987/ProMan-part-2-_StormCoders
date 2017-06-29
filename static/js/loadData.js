@@ -12,7 +12,7 @@ function getCards(boardId){
         success : function(response) {
             console.log(response);
             removeElementsByClass('card mb-3');
-            $('#add-card-title').val('');
+            $('#addCardTitle').val('');
             for (let c = 0; c < response.length; c++) {
                 var cardTitle = response[c]['card-title'];
                 var cardStatus = 'new';

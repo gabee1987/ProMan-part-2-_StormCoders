@@ -33,7 +33,7 @@ function createCard(boardId, cardStatus, cardTitle) {
     var card = $(
                 `<div class="card mb-3">
                     <div class="card-block">
-                        <h4 class="card-title"> ${cardTitle} </h4>
+                        <h4 class="card-title task"> ${cardTitle} </h4>
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Status: ${cardStatus} </small>

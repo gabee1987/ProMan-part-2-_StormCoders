@@ -90,14 +90,14 @@
         <div class="modal fade" id="addBoardForm" tabindex="-1" role="dialog" aria-labelledby="addBoardForm" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div id="alert-main">
-                        <!-- alert will be displayed here -->
-                    </div>
                     <div class="modal-header">
                         <h5 class="modal-title" id="addBoardFormLabel">Add a board</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
+                    </div>
+                    <div id="alert-main">
+                        <!-- alert will be displayed here -->
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
@@ -122,12 +122,12 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <p class="hidden-id" hidden></p>
                     </div>
-                    <div id="alert-main">
+                    <div id="alert-main-card">
                         <!-- alert will be displayed here -->
                     </div>
                     <div class="form-group">
                         <label for="add-card-title" class="form-control-label"> Card title: </label>
-                        <input id="add-card-title" type="text" class="form-control">
+                        <input id="addCardTitle" type="text" class="form-control">
                     </div>
                     <button id="add-card-button" type="button" class="btn btn-outline-success">
                         Add a card
