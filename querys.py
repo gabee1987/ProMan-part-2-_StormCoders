@@ -18,3 +18,11 @@ get_cards_query = """SELECT cards_proman.title, boards_proman.title
 
 save_board = """INSERT INTO boards_proman (title, state) \
                     VALUES (%s, %s);"""
+
+save_board_query = """INSERT INTO boards_proman (title, state) \
+                    VALUES (%s, %s)"""
+
+
+save_card_query = """INSERT INTO cards_proman (board_id, title, status) \
+                    VALUES (%s, %s, %s)"""
+

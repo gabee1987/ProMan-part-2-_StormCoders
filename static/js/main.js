@@ -7,6 +7,9 @@ function main() {
             contentType: 'application/json;charset=UTF-8',
             success : function(response) {
                 console.log(response);
+                for (let b = 0; b < response.length; b++) {
+                    createBoard(response[b]['title'], response[b]['state'])
+                }
             },
             error: function(error) {
                 alert('Failed get boards!');
@@ -17,13 +20,13 @@ function main() {
     getBoards();
     getCards(1);
     
-    $('#addBoardButton').on('click', function(){
+    $('#addBoardButton').on('click', function() {
         var boardTitle = $('#addBoardTitle').val();
         var boardState = 'active';
         //if input is empty alert the user
         if($('#addBoardTitle').val() == '') {
-            $('#alert').html('<strong>Warning!</strong> You left the title empty');
-            $('#alert').fadeIn().delay(1000).fadeOut();
+            $('#alert-main').html('<strong>Warning!</strong> You left the title empty');
+            $('#alert-main').fadeIn().delay(1000).fadeOut();
             return false;
         };
         saveBoard(boardTitle, boardState);
@@ -34,6 +37,13 @@ function main() {
         var boardId = $(this).attr('data-id');
         getCards(boardId);
 
+    });
+    
+    $('#addCardButton').on('click', function() {
+        var boardId = 1 //$('#boardId').data('boardId');
+        var cardTitle = $('#addCardTitle').val();
+        var cardStatus = 'new';
+        saveCard(boardId, cardTitle, cardStatus);
     });
     
 }
