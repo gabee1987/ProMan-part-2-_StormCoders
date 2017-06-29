@@ -27,7 +27,7 @@ def saveboard():
 
 @app.route('/get-boards')
 def get_boards():
-    
+
     rows = handle_database(get_boards_query)
 
     objects_list = []
@@ -38,16 +38,16 @@ def get_boards():
         d['state'] = row[2]
         objects_list.append(d)
     datas_in_json = json.dumps(objects_list)
-    print(datas_in_json)
+
     return datas_in_json
 
 
 @app.route('/get-cards', methods=['POST'])
-def get_boards():
+def get_cards():
 
-    json_board_data = request.json['JSONBoard']
+    json_board_data = request.json['data']
     board_data = json.loads(json_board_data)
-    data_to_query = board_data[0]['id']
+    data_to_query = str(board_data['idObj']['id'])
 
     rows = handle_database(get_cards_query, data_to_query)
 
@@ -57,8 +57,8 @@ def get_boards():
         d['card-title'] = row[0]
         d['board-title'] = row[1]
         objects_list.append(d)
+
     datas_in_json = json.dumps(objects_list)
-    print(datas_in_json)
     return datas_in_json
 
 
