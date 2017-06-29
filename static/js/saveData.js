@@ -12,8 +12,8 @@ function saveBoard(boardTitle, boardState) {
             data : JSON.stringify({JSONBoard}),
             success : function(response) {
                 alert('Successfully added the board!');
-                console.log(response);
-                createBoard(boardTitle, boardState)
+                boardId = response;
+                createBoard(boardTitle, boardState, boardId);
             },
             error: function(error) {
                 alert('Failed to add board!');
@@ -28,10 +28,8 @@ function saveCard(boardId, cardTitle, cardStatus) {
         'title': cardTitle,
         'status': cardStatus
     }
-    console.log(cardObject);
 
     var JsonCard = JSON.stringify({cardObject});
-    console.log(JsonCard);
     $.ajax({
             type : 'POST',
             url : '/save-card',
@@ -39,7 +37,7 @@ function saveCard(boardId, cardTitle, cardStatus) {
             data : JSON.stringify({JsonCard}),
             success : function(response) {
                 alert('Successfully added the card!');
-                console.log(response);
+                createCard(boardId, cardStatus, cardTitle);
             },
             error: function(error) {
                 alert('Failed to add the card!');

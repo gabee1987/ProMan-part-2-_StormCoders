@@ -8,6 +8,7 @@
 
 get_boards_query = """SELECT id, title, state FROM boards_proman;"""
 
+get_board_id_query = """SELECT id FROM boards_proman WHERE title = %s;"""
 
 get_cards_query = """SELECT cards_proman.title, boards_proman.title
                 FROM cards_proman

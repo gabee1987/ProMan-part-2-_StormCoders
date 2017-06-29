@@ -1,5 +1,4 @@
 function main() {
-
     getBoards();
 
 
@@ -22,12 +21,39 @@ function main() {
 
     });
     
-    $('#addCardButton').on('click', function() {
-        var boardId = 1 //$('#boardId').data('boardId');
-        var cardTitle = $('#addCardTitle').val();
+    $('#add-card-button').on('click', function() {
+        var boardId = $('.hidden-id').text();
+        var cardTitle = $('#add-card-title').val();
         var cardStatus = 'new';
+        //if input is empty alert the user
+        if($('#add-card-title').val() == '') {
+            $('#alert-main').html('<strong>Warning!</strong> You left the title empty');
+            $('#alert-main').fadeIn().delay(1000).fadeOut();
+            return false;
+        };
         saveCard(boardId, cardTitle, cardStatus);
     });
+
+    $(document).on('click', '.view', function() {
+        var boardId = $(this).data('boardid');
+        $('#detailedBoard').data('boardid', boardId);
+        
+    });
+
+
+    $('#detailedBoard').on('show.bs.modal', function (event) {
+        
+        var button = $(event.relatedTarget);
+        var boardId = button.data('boardid');
+        var boardTitle = button.data('boardtitle');
+        var modal = $(this);
+        modal.find('.modal-title').text(boardTitle);
+        modal.find('.hidden-id').text(boardId);
+        getCards(boardId);
+    });
+
+  
+    
     
 }
 

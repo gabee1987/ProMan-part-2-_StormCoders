@@ -3,8 +3,7 @@ function getCards(boardId){
                 'id': boardId
             }
     var data = JSON.stringify({idObj});
-    JSON.stringify({data})
-    debugger;
+    JSON.stringify({data});
     $.ajax({
         type : 'POST',
         url : '/get-cards',
@@ -12,6 +11,13 @@ function getCards(boardId){
         data : JSON.stringify({data}),
         success : function(response) {
             console.log(response);
+            removeElementsByClass('card mb-3');
+            $('#add-card-title').val('');
+            for (let c = 0; c < response.length; c++) {
+                var cardTitle = response[c]['card-title'];
+                var cardStatus = 'new';
+                createCard(boardId, cardStatus, cardTitle);
+            }
         },
         error: function(error) {
             alert('Failed to get boards!');
@@ -28,9 +34,8 @@ function getBoards() {
             url : '/get-boards',
             contentType: 'application/json;charset=UTF-8',
             success : function(response) {
-                console.log(response);
                 for (let b = 0; b < response.length; b++) {
-                    createBoard(response[b]['title'], response[b]['state'])
+                    createBoard(response[b]['title'], response[b]['state'], response[b]['id'])
                 }
             },
             error: function(error) {

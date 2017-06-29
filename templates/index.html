@@ -32,6 +32,7 @@
                     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
                     crossorigin="anonymous"></script>-->
         <!-- Own Javascript -->
+        <script src="/static/js/clearCard.js" type="text/javascript" defer></script>
         <script src="/static/js/saveData.js" type="text/javascript" defer></script>
         <script src="/static/js/loadData.js" type="text/javascript" defer></script>
         <script src="/static/js/domCreator.js" type="text/javascript" defer></script>
@@ -79,7 +80,7 @@
             </nav>
         
         <div class="container-fluid">
-                <div class="card-deck"> 
+                <div id="board-deck" class="card-deck"> 
 
                 <!--bootCards will be displayed here-->
 
@@ -89,34 +90,60 @@
         <div class="modal fade" id="addBoardForm" tabindex="-1" role="dialog" aria-labelledby="addBoardForm" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addBoardFormLabel">Add a board</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="addBoardTitle" class="form-control-label"> Board title: </label>
-                        <input id="addBoardTitle" type="text" class="form-control">
-                    </div>
                     <div id="alert-main">
                         <!-- alert will be displayed here -->
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button id="addBoardButton" type="button" data-dismiss="modal" class="btn btn-primary">Add</button>
-                </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addBoardFormLabel">Add a board</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="addBoardTitle" class="form-control-label"> Board title: </label>
+                            <input id="addBoardTitle" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button id="addBoardButton" type="button" data-dismiss="modal" class="btn btn-primary">Add</button>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Detailed board modal -->
-        <div id="detailedBoard" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
+        <div class="modal fade" id="detailedBoard" tabindex="-1" role="dialog" aria-labelledby="detailedBoard">
+            <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
-                ...
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="ModalLabel"><!-- Modal title comes here --></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p class="hidden-id" hidden></p>
+                    </div>
+                    <div id="alert-main">
+                        <!-- alert will be displayed here -->
+                    </div>
+                    <div class="form-group">
+                        <label for="add-card-title" class="form-control-label"> Card title: </label>
+                        <input id="add-card-title" type="text" class="form-control">
+                    </div>
+                    <button id="add-card-button" type="button" class="btn btn-outline-success">
+                        Add a card
+                    </button>
+                    <div class="modal-body">
+
+                        <div id="detailed-board-deck" class="card-deck">
+
+                            <!--Cards will be displayed here-->
+
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
