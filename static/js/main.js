@@ -1,5 +1,6 @@
 function main() {
 
+<<<<<<< HEAD
     function getBoards() {
     $.ajax({
             type : 'GET',
@@ -16,8 +17,11 @@ function main() {
             dataType: 'json'
         });
     }
+=======
+>>>>>>> develop
     getBoards();
-    
+
+
     $('#addBoardButton').on('click', function() {
         var boardTitle = $('#addBoardTitle').val();
         var boardState = 'active';
@@ -28,6 +32,13 @@ function main() {
             return false;
         };
         saveBoard(boardTitle, boardState);
+    });
+
+
+    $('#viewBoard').on('click', function(){
+        var boardId = $(this).attr('data-id');
+        getCards(boardId);
+
     });
     
     $('#add-card-button').on('click', function() {
