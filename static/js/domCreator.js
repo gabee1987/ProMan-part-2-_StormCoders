@@ -8,7 +8,7 @@ $(document).ready(function () {
 
 }); */
 
-function createBoard(boardTitle, boardState) {
+function createBoard(boardTitle, boardState, boardId) {
     var deck = $('#board-deck');
     var board = $(
                 `<div class="card mb-4">
@@ -21,11 +21,26 @@ function createBoard(boardTitle, boardState) {
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Status: ${boardState} </small>
-                        <a href="#" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#detailedBoard">View</a>
+                        <a data-boardid="${boardId}" href="#" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#detailedBoard">View</a>
                     </div>
                 </div>`
                 );
     deck.append(board);
 }
 
-
+function createCard(boardId, cardStatus, cardTitle) {
+    var deck = $('#detailed-board-deck');
+    var card = $(
+                `<div class="card mb-3">
+                    <div class="card-block">
+                        <h4 class="card-title"> ${cardTitle} </h4>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Status: ${cardStatus} </small>
+                        <a href="#" class="btn btn-primary btn-sm float-right">View</a>
+                    </div>
+                </div>`
+                );
+    deck.append(card);
+    var id = $('').data('boardId');
+}

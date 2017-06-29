@@ -21,7 +21,12 @@ def save_board():
     query = save_board_query
     data_to_query = (board_data['boardObj']['title'], board_data['boardObj']['state'])
     handle_database(query, data_to_query)
-    return redirect(url_for('index'))
+    board_title = board_data['boardObj']['title']
+    query = get_board_id_query
+    board_id = handle_database(query, [board_title])
+    print(board_id[0][0])
+    print(type(board_id))
+    return str(board_id[0][0])
 
 
 @app.route('/save-card', methods=['POST'])
