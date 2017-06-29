@@ -1,8 +1,8 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash, jsonify, Response, request
 import json
+import collections
 from querys import *
 from database_handler import *
-import collections
 
 
 app = Flask(__name__)
