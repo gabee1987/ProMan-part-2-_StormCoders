@@ -18,6 +18,7 @@ function main() {
         });
     }
     getBoards();
+    getCards(1);
     
     $('#addBoardButton').on('click', function() {
         var boardTitle = $('#addBoardTitle').val();
@@ -29,6 +30,13 @@ function main() {
             return false;
         };
         saveBoard(boardTitle, boardState);
+    });
+
+
+    $('#viewBoard').on('click', function(){
+        var boardId = $(this).attr('data-id');
+        getCards(boardId);
+
     });
     
     $('#addCardButton').on('click', function() {
