@@ -21,7 +21,7 @@ function createBoard(boardTitle, boardState) {
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Status: ${boardState} </small>
-                        <a href="#" class="btn btn-primary btn-sm float-right">View</a>
+                        <a href="#" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#detailedBoard">View</a>
                     </div>
                 </div>`
                 );

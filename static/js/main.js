@@ -37,6 +37,7 @@ function main() {
         var cardStatus = 'new';
         saveCard(boardId, cardTitle, cardStatus);
     });
+    
 }
 
 $(document).ready(main());
