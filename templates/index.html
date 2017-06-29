@@ -60,7 +60,7 @@
                                 Add
                             </button>
                             <!-- Add board button -->
-                            <button id="addBoardButton" class="btn btn-outline-success my-2 my-sm-0" id="addBootCard" type="button" class="btn btn-primary btn-sm">
+                            <button id="BoardForm" type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#addBoardForm">
                                 Create new board
                             </button>
                         </li>
@@ -81,30 +81,32 @@
 
                 </div>     
         </div>
-        <!-- Add board form -->
-        <div id="addBoardForm" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Add board form content-->
+        <!-- Add board form modal -->
+        <div class="modal fade" id="addBoardForm" tabindex="-1" role="dialog" aria-labelledby="addBoardForm" aria-hidden="true">
+            <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Add a board </h4>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addBoardFormLabel">Add a board</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="addBoardTitle" class="form-control-label"> Board title: </label>
+                        <input id="addBoardTitle" type="text" class="form-control">
                     </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="addBoardTitle" class="form-control-label"> Board title: </label>
-                            <input id="addBoardTitle" type="text" class="form-control">
-                        </div>
-                        <div id="alert-main">
-                            <!-- alert will be displayed here -->
-                        </div>
+                    <div id="alert-main">
+                        <!-- alert will be displayed here -->
                     </div>
-                    <div class="modal-footer">
-                        <button id="addBoardButton" type="submit" class="btn btn-default" data-dismiss="modal"> Add </button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addBoardButton" type="button" class="btn btn-primary">Add</button>
+                </div>
                 </div>
             </div>
         </div>
+
     </body>    
 </html>

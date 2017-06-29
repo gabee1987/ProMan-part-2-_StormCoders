@@ -1,6 +1,6 @@
 function main() {
 
-    /*function getBoards() {
+    function getBoards() {
     $.ajax({
             type : 'GET',
             url : '/get-boards',
@@ -14,7 +14,7 @@ function main() {
             dataType: 'json'
         });
     }
-    getBoards();*/
+    getBoards();
     
     $('#addBoardButton').on('click', function(){
         var boardTitle = $('#addBoardTitle').val();

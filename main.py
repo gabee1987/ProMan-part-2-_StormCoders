@@ -14,7 +14,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-'''
+
 @app.route('/save-board', methods=['POST'])
 def saveboard():
     json_board_data = request.json['JSONBoard']
@@ -39,7 +39,7 @@ def get_boards():
     datas_in_json = json.dumps(objects_list)
     print(datas_in_json)
     return datas_in_json
-'''
+
 
 if __name__ == '__main__':
     app.run(debug=True)
