@@ -3,129 +3,110 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="icon" href="/static/images/favicon.ico">
+        <!-- Bootstrap 4 alpha CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+                integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+                crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+                integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+                crossorigin="anonymous">-->
+        <!-- Google fonts -->
         <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+        <script src="https://use.fontawesome.com/a8063379b9.js"></script>
+        <!-- Own CSS -->
         <link href="/static/css/index.css" rel="stylesheet">
+        <!-- JQuery-->      
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- Bootstrap Tether js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+                integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+                crossorigin="anonymous"></script>
+        <!-- Bootstrap 4 alpha js -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+                integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+                crossorigin="anonymous"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                    crossorigin="anonymous"></script>-->
+        <!-- Own Javascript -->
         <script src="/static/js/dataHandler.js" type="text/javascript" defer></script>
-        <!--<script src="/static/js/getDataFromBoard.js" type="text/javascript" defer></script>-->
-        <!--<script src="/static/js/getBoardsFromStorage.js" type="text/javascript" defer></script>-->
-        <!--<script src="/static/js/setBoardsToStorage.js" type="text/javascript" defer></script>-->
         <script src="/static/js/main.js" type="text/javascript" defer></script>
+        <script src="/static/js/bootcards.js" type="text/javascript" defer></script>
 
         <title>Board page</title>
     </head>
     <body>
-        <!-- Add board form -->
-        <div id="addBoardForm" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Add board form content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Add a board </h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="addBoardTitle" class="form-control-label"> Board title: </label>
-                            <input id="addBoardTitle" type="text" class="form-control">
-                        </div>
-                        <div id="alert-main">
-                            <!-- alert will be displayed here -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="addBoardButton" type="submit" class="btn btn-default" data-dismiss="modal"> Add </button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
+        <!-- Header -->
+        <div class="jumbotron">
+            <div class="page-header">
+                <!--<h1 id="page-title" class="text-left">ProMan</h1>-->
+                <h2 id="page-alt-title" class="text-center">ProMan</h2>
             </div>
         </div>
-
-        <!-- Add card form -->
-        <div id="addCardForm" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Add board form content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"> Add a card </h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="addBoardTitle" class="form-control-label"> Card title: </label>
-                            <input id="addCardTitle" type="text" class="form-control">
-                        </div>
-                        <div id="alert-main">
-                            <!-- alert will be displayed here -->
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="addCardButton" type="submit" class="btn btn-default" data-dismiss="modal"> Add </button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+            <!-- Navbar -->
+            <nav class="navbar navbar-toggleable-md navbar-light bg-faded sticky-top">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="/index">ProMan</a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mr-auto">
+                        <li>
+                            <!-- Add bootcard -->
+                            <button class="btn btn-outline-success my-2 my-sm-0" id="addBootCard" type="button" class="btn btn-primary btn-sm">
+                                Add
+                            </button>
+                            <!-- Add board button -->
+                            <button id="BoardForm" type="button" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#addBoardForm">
+                                Create new board
+                            </button>
+                        </li>
+                    </ul>
+                    <!--<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">-->
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="nav-item ml-auto">
+                                <img id="stormcoders" class="mx-auto" href="/index" src="/static/img/stormcoders_logo.png" alt="StormCoders logo">
+                            </li>
+                        </ul>
                 </div>
-            </div>
-        </div>
+            </nav>
+        
+        <div class="container-fluid">
+                <div class="card-deck"> 
 
-        <!-- deatiledBoard modal -->
-        <div class="modal fade" id="detailedBoard" tabindex="-1" role="dialog" aria-labelledby="detailedBoard" aria-hidden="true">
+                <!--bootCards will be displayed here-->
+
+                </div>     
+        </div>
+        <!-- Add board form modal -->
+        <div class="modal fade" id="addBoardForm" tabindex="-1" role="dialog" aria-labelledby="addBoardForm" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                 <div class="modal-header">
+                    <h5 class="modal-title" id="addBoardFormLabel">Add a board</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title" id="detailedBoardLongTitle">Board #</h5>
                 </div>
                 <div class="modal-body">
-                    <ul class="card-properties">
-                        <li class="thing-title"  style="display: none;"></li>
-                        <li class="thing-status"  style="display: none;"></li>
-                    </ul>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <img id="stormcoders" href="/index" src="/static/img/stormcoders_logo_text_only.png" alt="StormCoders logo" style="width:20%;height:20%;">
-                <div class="page-header">
-                    <h1 id="page-title" class="text-left">ProMan</h1>
-                    <h2 id="page-alt-title" class="text-center">Boards</h2>
+                    <div class="form-group">
+                        <label for="addBoardTitle" class="form-control-label"> Board title: </label>
+                        <input id="addBoardTitle" type="text" class="form-control">
+                    </div>
                     <div id="alert-main">
                         <!-- alert will be displayed here -->
                     </div>
                 </div>
-            <!-- Add board button -->
-            <button id="addBoard" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addBoardForm">
-                Add board
-            </button>
-            <button id="addCard" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#addCardForm">
-                Add card
-            </button>
-            <div id="boards-wrapper" class="row align-items-center">
-                
-                <!--Boards will be displayed here-->  
-
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="addBoardButton" type="button" class="btn btn-primary">Add</button>
+                </div>
+                </div>
             </div>
         </div>
-        <!--Board template-->
-                <div class="card" style="width: 30rem;">
-                    <div class="card-block">
-                        <h4 class="card-title"></h4>
-                        <button id="viewBoard" type="button" class="btn btn-info btn-sm view-board" data-toggle="modal" data-target="#detailedBoard" data-id-holder="">
-                            View board
-                        </button>
-                    </div>
-                    <ul class="task-template list-group list-group-flush">
-                        <li class="task-title list-group-item"></li>
-                        <li class="task-status list-group-item"></li>
-                    </ul>
-                </div>
+
     </body>    
 </html>
