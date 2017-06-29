@@ -14,7 +14,7 @@ function saveBoard(boardTitle, boardState) {
                 alert('Successfully added the board!');
                 boardId = response;
                 createBoard(boardTitle, boardState, boardId)
-                console.log(boardId + 'ez kell');
+                //console.log(boardId + 'ez kell');
             },
             error: function(error) {
                 alert('Failed to add board!');

@@ -163,6 +163,7 @@ Board 'cards'
 	padding-right: 1.3em;
 }
 .card-title {
+	overflow: hidden;
 	margin-top: -19px;
 	margin-left: -19px;
 	margin-right: -19px;
@@ -210,6 +211,3 @@ Board 'cards'
 Detailed board modal
 ==========================================================================
 */
-
-
-.modal .modal-dialog { width: 80%; }

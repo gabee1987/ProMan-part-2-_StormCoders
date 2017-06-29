@@ -24,8 +24,6 @@ def save_board():
     board_title = board_data['boardObj']['title']
     query = get_board_id_query
     board_id = handle_database(query, [board_title])
-    print(board_id[0][0])
-    print(type(board_id))
     return str(board_id[0][0])
 
 
@@ -63,10 +61,13 @@ def get_boards():
 def get_cards():
 
     json_board_data = request.json['data']
+    print(json_board_data)
     board_data = json.loads(json_board_data)
     data_to_query = str(board_data['idObj']['id'])
+    print(data_to_query, 'data_to_query')
 
-    rows = handle_database(get_cards_query, data_to_query)
+    rows = handle_database(get_cards_query, [data_to_query])
+    print(rows, 'rows')
 
     objects_list = []
     for row in rows:
@@ -76,6 +77,7 @@ def get_cards():
         objects_list.append(d)
 
     datas_in_json = json.dumps(objects_list)
+    print(datas_in_json, 'datas_in_json')
     return datas_in_json
 
 

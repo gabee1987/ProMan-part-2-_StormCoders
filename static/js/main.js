@@ -1,24 +1,4 @@
 function main() {
-
-<<<<<<< HEAD
-    function getBoards() {
-    $.ajax({
-            type : 'GET',
-            url : '/get-boards',
-            contentType: 'application/json;charset=UTF-8',
-            success : function(response) {
-                for (let b = 0; b < response.length; b++) {
-                    createBoard(response[b]['title'], response[b]['state'])
-                }
-            },
-            error: function(error) {
-                alert('Failed get boards!');
-            },
-            dataType: 'json'
-        });
-    }
-=======
->>>>>>> develop
     getBoards();
 
 
@@ -42,11 +22,11 @@ function main() {
     });
     
     $('#add-card-button').on('click', function() {
-        var boardId = $('.card-title').data('boardid');
+        var boardId = $('.hidden-id').text();
         var cardTitle = $('#add-card-title').val();
         var cardStatus = 'new';
         //if input is empty alert the user
-        if($('#addBoardTitle').val() == '') {
+        if($('#add-card-title').val() == '') {
             $('#alert-main').html('<strong>Warning!</strong> You left the title empty');
             $('#alert-main').fadeIn().delay(1000).fadeOut();
             return false;
@@ -54,15 +34,26 @@ function main() {
         saveCard(boardId, cardTitle, cardStatus);
     });
 
-    $('.btn btn-primary btn-sm float-right').on('click', function() {
-        boardId = $(this).data('boardid');
+    $(document).on('click', '.view', function() {
+        var boardId = $(this).data('boardid');
+        $('#detailedBoard').data('boardid', boardId);
         
     });
 
-    $('#detailed-board-modal-title').on('hidden.bs.modal', function () {
-        $(this).find('.modal-body').text('');
-        $(this).find('.modal-title')
+
+    $('#detailedBoard').on('show.bs.modal', function (event) {
+        
+        var button = $(event.relatedTarget);
+        var boardId = button.data('boardid');
+        var boardTitle = button.data('boardtitle');
+        var modal = $(this);
+        modal.find('.modal-title').text(boardTitle);
+        modal.find('.hidden-id').text(boardId);
+        getCards(boardId);
     });
+
+  
+    
     
 }
 

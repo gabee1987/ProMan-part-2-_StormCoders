@@ -21,7 +21,7 @@ function createBoard(boardTitle, boardState, boardId) {
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Status: ${boardState} </small>
-                        <a data-boardid="${boardId}" href="#" class="btn btn-primary btn-sm float-right" data-toggle="modal" data-target="#detailedBoard">View</a>
+                        <a data-boardid="${boardId}" data-boardTitle="${boardTitle}" href="#" class="btn btn-primary btn-sm float-right view" data-toggle="modal" data-target="#detailedBoard">View</a>
                     </div>
                 </div>`
                 );
@@ -37,10 +37,8 @@ function createCard(boardId, cardStatus, cardTitle) {
                     </div>
                     <div class="card-footer">
                         <small class="text-muted">Status: ${cardStatus} </small>
-                        <a href="#" class="btn btn-primary btn-sm float-right">View</a>
                     </div>
                 </div>`
                 );
     deck.append(card);
-    var id = $('').data('boardId');
 }
